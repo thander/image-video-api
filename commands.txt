@@ -10,7 +10,7 @@ apt install -y python3.10 && \
 apt install -y python3.10-venv && \
 apt install -y ffmpeg && \
 apt install -y git && \
-git clone https://github.com/thander/image-video-api.git /runpod-volume/video-api && \
+git clone https://github.com/thander/image-video-api /runpod-volume/video-api && \
 cd /runpod-volume/video-api && \
 python3.10 -m venv env && \
 source env/bin/activate && \
