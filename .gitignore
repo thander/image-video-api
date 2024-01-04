@@ -1,0 +1,21 @@
+__pycache__
+env
+.env
+instance
+log
+outputs
+
+# extensions
+*.egg-info
+*.py[cod]
+
+# envs
+.pt13
+.pt2
+
+# directories
+/checkpoints
+/dist
+/outputs
+/build
+/src
