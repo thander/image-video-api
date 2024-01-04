@@ -1,0 +1,17 @@
+bash -c "apt update && apt install -y wget && DEBIAN_FRONTEND=noninteractive apt-get install -y openssh-server && \
+mkdir -p ~/.ssh && cd $_ && chmod 700 ~/.ssh && echo YOUR_PUBLIC_KEY > authorized_keys && \
+chmod 700 authorized_keys && service ssh start && \
+cd / && apt update && apt upgrade -y && \
+apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget && \
+apt-get install -y software-properties-common && \
+add-apt-repository -y ppa:deadsnakes/ppa && \
+apt install -y ffmpeg && \
+apt install -y git && \
+export HF_HOME="/runpod-volume/video-api/hg-cache/huggingface" && \
+export HF_DATASETS_CACHE="/runpod-volume/video-api/hg-cache/huggingface/datasets" && \
+export TRANSFORMERS_CACHE="/runpod-volume/video-api/hg-cache/huggingface/models" && \
+cd /runpod-volume/video-api && \
+source env/bin/activate && \
+nohup sh -c 'PIP_CACHE_DIR=./ ./env/bin/python -u serverless.py &' && \
+sleep infinity"
+

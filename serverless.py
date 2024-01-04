@@ -4,10 +4,8 @@ import runpod
 import tempfile
 import requests
 import traceback
-import firebase_admin
 from datetime import datetime
 from dotenv import load_dotenv
-from firebase_admin import firestore
 
 # local imports
 from app.api.functions import do_img2vid, text2img, download_image

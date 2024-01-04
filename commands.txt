@@ -14,11 +14,11 @@ git clone https://github.com/thander/image-video-api /runpod-volume/video-api &&
 cd /runpod-volume/video-api && \
 python3.10 -m venv env && \
 source env/bin/activate && \
-pip install --upgrade pip && \
-pip install -r requirements/requirements.txt && \
-pip install -r requirements/pt2.txt && \
-pip install . && \
-pip install -e git+https://github.com/Stability-AI/datapipelines.git@main#egg=sdata && \
+PIP_CACHE_DIR=./ pip install --upgrade pip && \
+PIP_CACHE_DIR=./ pip install -r requirements/requirements.txt --ignore-installed && \
+PIP_CACHE_DIR=./ pip install -r requirements/pt2.txt --ignore-installed  && \
+PIP_CACHE_DIR=./ pip install --ignore-installed . && \
+PIP_CACHE_DIR=./ pip install --ignore-installed -e git+https://github.com/Stability-AI/datapipelines.git@main#egg=sdata && \
 mkdir checkpoints && \
 wget -O checkpoints/svd_xt.safetensors https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt/resolve/main/svd_xt.safetensors && \
 echo 'VIDEO_DIR=/runpod-volume/video-api/outputs/video' > .env && \
