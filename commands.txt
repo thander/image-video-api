@@ -21,10 +21,6 @@ PIP_CACHE_DIR=./ pip install --ignore-installed . && \
 PIP_CACHE_DIR=./ pip install --ignore-installed -e git+https://github.com/Stability-AI/datapipelines.git@main#egg=sdata && \
 mkdir checkpoints && \
 wget -O checkpoints/svd_xt.safetensors https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt/resolve/main/svd_xt.safetensors && \
-echo 'VIDEO_DIR=/runpod-volume/video-api/outputs/video' > .env && \
-echo 'THUMBNAIL_DIR=/runpod-volume/video-api/outputs/thumbnail' >> .env && \
-echo 'SECRET_KEY=2PGx3dCK7' >> .env && \
-echo 'SECURITY_PASSWORD_SALT=2PGx3dCK7' >> .env && \
 mkdir log && \
 nohup sh -c 'python -u serverless.py &' && \
 sleep infinity"
