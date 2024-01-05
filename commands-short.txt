@@ -11,7 +11,14 @@ export HF_HOME="/runpod-volume/video-api/hg-cache/huggingface" && \
 export HF_DATASETS_CACHE="/runpod-volume/video-api/hg-cache/huggingface/datasets" && \
 export TRANSFORMERS_CACHE="/runpod-volume/video-api/hg-cache/huggingface/models" && \
 cd /runpod-volume/video-api && \
+git pull && \
 source env/bin/activate && \
 nohup sh -c 'PIP_CACHE_DIR=./ ./env/bin/python -u serverless.py &' && \
 sleep infinity"
 
+
+
+bash -c 'export HF_HOME="/workspace/video-api/hg-cache/huggingface" && \
+export HF_DATASETS_CACHE="/workspace/video-api/hg-cache/huggingface/datasets" && \
+export TRANSFORMERS_CACHE="/workspace/video-api/hg-cache/huggingface/models" && \
+PIP_CACHE_DIR=./ ./env/bin/python -u serverless.py'
