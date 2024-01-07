@@ -831,13 +831,13 @@ def save_video_as_grid_and_mp4(
     video_path = (
         video_record.video_path()
         if video_record
-        else tempfile.mkstemp(suffix=".webm")[1]
+        else tempfile.mkstemp(suffix=".mp4")[1]
     )
     for vid in video_batch:
         save_image(vid, fp=thumbnail_path, nrow=4)
         writer = cv2.VideoWriter(
             video_path,
-            cv2.VideoWriter_fourcc(*"VP90"),
+            cv2.VideoWriter_fourcc(*"H264"),
             fps,
             (vid.shape[-1], vid.shape[-2]),
         )
@@ -869,7 +869,7 @@ def save_video_as_grid_and_mp4(
             thumbnail_url = thumbnail_blob.public_url
 
             video_blob = storage_client.blob(
-                os.path.join("videos", path, f"{basename}.webm")
+                os.path.join("videos", path, f"{basename}.mp4")
             )
             video_blob.upload_from_filename(video_path)
             video_blob.make_public()
