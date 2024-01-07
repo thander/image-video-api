@@ -837,7 +837,7 @@ def save_video_as_grid_and_mp4(
         save_image(vid, fp=thumbnail_path, nrow=4)
         writer = cv2.VideoWriter(
             video_path,
-            cv2.VideoWriter_fourcc(*"MP4V"),
+            cv2.VideoWriter_fourcc(*"mp4v"),
             fps,
             (vid.shape[-1], vid.shape[-2]),
         )
@@ -877,8 +877,8 @@ def save_video_as_grid_and_mp4(
 
             if os.path.exists(thumbnail_path):
                 os.remove(thumbnail_path)
-            if os.path.exists(video_path):
-                os.remove(video_path)
+            # if os.path.exists(video_path):
+            #     os.remove(video_path)
 
             return {
                 "thumbnail": thumbnail_url,
