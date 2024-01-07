@@ -156,7 +156,7 @@ def download_image(url):
 
 
 def do_img2vid(request, image: str, video_record=None):
-    version = "svd"
+    version = "svd_xt"
     version_dict = VERSION2SPECS[version]
     H = int(request.get("H", version_dict["H"]))
     W = int(request.get("W", version_dict["W"]))

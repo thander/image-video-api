@@ -877,8 +877,8 @@ def save_video_as_grid_and_mp4(
 
             if os.path.exists(thumbnail_path):
                 os.remove(thumbnail_path)
-            # if os.path.exists(video_path):
-            #     os.remove(video_path)
+            if os.path.exists(video_path):
+                os.remove(video_path)
 
             return {
                 "thumbnail": thumbnail_url,
