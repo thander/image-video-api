@@ -837,7 +837,7 @@ def save_video_as_grid_and_mp4(
         save_image(vid, fp=thumbnail_path, nrow=4)
         writer = cv2.VideoWriter(
             video_path,
-            cv2.VideoWriter_fourcc('H', '2', '6', '4'),
+            cv2.VideoWriter_fourcc(*"MP4V"),
             fps,
             (vid.shape[-1], vid.shape[-2]),
         )
