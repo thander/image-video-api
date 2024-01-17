@@ -183,7 +183,7 @@ def sample(
                 video_path = os.path.join(output_folder, f"{base_count:06d}.mp4")
                 writer = cv2.VideoWriter(
                     video_path,
-                    cv2.VideoWriter_fourcc(*"avc1"),
+                    cv2.VideoWriter_fourcc(*"MP4V"),
                     fps_id + 1,
                     (samples.shape[-1], samples.shape[-2]),
                 )
