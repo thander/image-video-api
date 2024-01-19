@@ -834,7 +834,7 @@ def save_video_as_grid_and_mp4(
         else tempfile.mkstemp(suffix=".mp4")[1]
     )
     for vid in video_batch:
-        save_image(vid, fp=thumbnail_path, nrow=4)
+        # save_image(vid, fp=thumbnail_path, nrow=4)
         writer = cv2.VideoWriter(
             video_path,
             cv2.VideoWriter_fourcc(*"mp4v"),
